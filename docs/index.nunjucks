@@ -2,4 +2,5 @@
 
 {% block body %}
   <h1>Hello, I'm Jonri Rothwell!</h1>
+  <h2>I'm Senior User Experience Web Developer</h2>
 {% endblock %}
