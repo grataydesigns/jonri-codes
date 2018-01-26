@@ -1,0 +1,2 @@
+{% macro button(class=false) %}
+{% endmacro %}
