@@ -1,0 +1,40 @@
+{% macro code_example_pair(class=false, 
+                            example,
+                            example_label,
+                            examples,
+                            code_snippet_source=false,
+                            language='markup',
+                            show_copy_button=true, 
+                            preformatted=false,
+                            copy_code_text="Copy Code",
+                            filename=false) %}
+    <div class="esds-doc-code-example-pair{{ ' ' + class if class }}">
+        {% if example %}
+            {# If only one example is passed in, display that single HTML example #}
+            {{ html_example_list(class="esds-doc-code-example-pair__example-list", example=example, label=example_label) }}
+            {% set code_example = example %}
+        {% endif %}
+
+        {% if examples %}
+            {# If multiple examples are passed in, display each HTML example in a list #}
+            {{ html_example_list(class="esds-doc-code-example-pair__example-list", examples=examples) }}
+            {% set code_example = examples[0].example %} {# If more than one example is shown, only show the source code from the first example #}
+        {% endif %}
+
+        {% if code_snippet_source %}
+            {# If code_snippet_source has been passed in, display that code and NOT the code that matches the example #}
+            {% set code_source = code_snippet_source %}
+        {% else %}
+            {# By default display code from the first html example shown #}
+            {% set code_source = code_example %}
+        {% endif %}
+
+        {{ code_snippet(class="esds-doc-code-example-pair__code-snippet", 
+                        source=code_source, 
+                        language=language, 
+                        show_copy_button=show_copy_button,
+                        preformatted=preformatted,
+                        copy_code_text=copy_code_text,
+                        filename=filename) }}
+    </div>
+{% endmacro %}

@@ -1,0 +1,38 @@
+{
+  "name": "esds-doc",
+  "version": "0.9.2",
+  "description": "",
+  "main": "gulpfile.js",
+  "directories": {
+    "doc": "docs",
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "prepack": "gulp build:all"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/EightShapes/esds-doc.git"
+  },
+  "contributors": [
+    "Nathan Curtis <nathan@eightshapes.com>",
+    "Kevin Powell <kevinmpowell@gmail.com>"
+  ],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/EightShapes/esds-doc/issues"
+  },
+  "homepage": "https://github.com/EightShapes/esds-doc#readme",
+  "dependencies": {
+    "js-beautify": "^1.6.14",
+    "prismjs": "^1.6.0",
+    "scrollmonitor": "^1.2.3",
+    "smoothscroll-polyfill": "^0.4.0",
+    "strip-indent": "^2.0.0",
+    "svg4everybody": "^2.1.9"
+  },
+  "devDependencies": {
+    "esds-build": "^0.28.1"
+  }
+}
