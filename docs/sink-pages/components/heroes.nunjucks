@@ -1,0 +1,7 @@
+{% extends "templates/sink.nunjucks" %}
+{% block body %}
+    {% filter markdown %}
+        # Heroes Sink
+    {% endfilter %} 
+    {# Your sink examples go here #} 
+{% endblock body %}

@@ -1,4 +1,4 @@
-{# {% import 'components/[your-macros-file].njk' as library with context %} #}
+{% import 'components/jonri-codes.nunjucks' as jc with context %}
 <!doctype html>
 <html>
     <head>
@@ -8,7 +8,7 @@
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         {% block head_content_prepend %}{% endblock head_content_prepend %}
-        <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
         <link rel="stylesheet" href="/styles/style.css">
         <script src="/scripts/jonri-codes.js"></script>
         {% block head_content_append %}{% endblock head_content_append %}

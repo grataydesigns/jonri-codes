@@ -1,6 +1,37 @@
 {% extends "templates/base.nunjucks" %}
 
 {% block body %}
-  <h1>Hello, I'm Jonri Rothwell!</h1>
-  <h2>I'm Senior User Experience Web Developer</h2>
+  <section class="jc-hero--full-bleed">
+    <header class="jc-hero__header">
+      <h1 class="jc-hero__title">Hello, I'm Jonri Rothwell!</h1>
+    </header>
+    <article class="jc-hero__content">
+      <ul class="jc-hero__list">
+        <li class="jc-hero__list-item">Front-End Designer</li>
+        <li class="jc-hero__list-item">Prototyper</li>
+        <li class="jc-hero__list-item">Design Systems Developer</li>
+        <li class="jc-hero__list-item">Interaction Designer</li>
+      </ul>
+      <ul class="jc-social__list jc-social__list--center">
+        <li class="jc-social__list-item">
+          <a href="//github.com/grataydesigns" class="jc-social__list-link">
+            <span class="jc-social__list-text">Github</span>
+            {{ jc.icon(class="jc-icon--size-lg") }}
+          </a>
+        </li>
+        <li class="jc-social__list-item">
+          <a href="//www.linkedin.com/in/jonrirothwell/" class="jc-social__list-link">
+            <span class="jc-social__list-text">LinkedIn</span>
+            {{ jc.icon(name="linkedin-square", class="jc-icon--size-lg") }}
+          </a>
+        </li>
+        <li class="jc-social__list-item">
+          <a href="//twitter.com/grataydesigns" class="jc-social__list-link">
+            <span class="jc-social__list-text">Twitter</span>
+            {{ jc.icon(name="twitter-square", class="jc-icon--size-lg") }}
+          </a>
+        </li>
+      </ul>
+    </article>
+  </section>
 {% endblock %}

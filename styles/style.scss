@@ -1,3 +1,17 @@
-body {
-  font-family: 'Roboto', sans-serif;
-}
+// ==========================================================================
+// Shared styles across components
+// ==========================================================================
+
+
+@import 'tokens/tokens';
+@import 'shared/utilities';
+@import 'shared/base';
+
+// ==========================================================================
+// Component Styles
+// ==========================================================================
+
+
+@import 'components/hero/hero';
+@import 'components/icon/icon';
+@import 'components/social/social';
