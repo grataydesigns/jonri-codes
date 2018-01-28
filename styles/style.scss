@@ -3,7 +3,7 @@
 // ==========================================================================
 
 
-@import 'tokens/tokens';
+@import '../tokens/tokens';
 @import 'shared/utilities';
 @import 'shared/base';
 
@@ -12,6 +12,6 @@
 // ==========================================================================
 
 
-@import 'components/hero/hero';
-@import 'components/icon/icon';
-@import 'components/social/social';
+@import '../components/hero/hero';
+@import '../components/icon/icon';
+@import '../components/social/social';
