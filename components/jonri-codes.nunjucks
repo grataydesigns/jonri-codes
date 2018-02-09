@@ -41,6 +41,8 @@
         {% endif %}
 {% endmacro %}
 
+{% macro hero(class=false) %}
+{% endmacro %}
 {% macro icon(
     name='github-square',
     title=false,
@@ -74,7 +76,5 @@
     </svg>
 {% endmacro %}
 
-{% macro hero(class=false) %}
-{% endmacro %}
 {% macro social(class=false) %}
 {% endmacro %}
