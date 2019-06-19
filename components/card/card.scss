@@ -1,0 +1,67 @@
+.card {
+  background: $jonri-codes-color-white;
+  border-radius: $jonri-codes-border-radius-default;
+  box-shadow: 0 10px 50px $jonri-codes-box-shadow;
+  position: relative;
+  transition: transform .8s ease-in-out;
+
+  &:hover {
+    cursor: pointer;
+    transform: translateY(-8px);
+  }
+}
+
+.card,
+.card__content {
+  display: flex;
+  flex-direction: column;
+}
+
+.card__content {
+  flex-grow: 1;
+  padding: $jonri-codes-space-xl;
+
+  > * + * {
+    margin-top: $jonri-codes-space-lg;
+  }
+
+  > :last-child {
+    margin-top: auto;
+  }
+
+  > :nth-last-child(2) {
+    margin: $jonri-codes-space-stack-lg;
+  }
+}
+
+.card__text {
+  max-width: 60ch;
+}
+
+.card__media {
+  // height: 180px;
+
+  img {
+    border-top-left-radius: $jonri-codes-border-radius-default;
+    border-top-right-radius: $jonri-codes-border-radius-default;
+    display: block;
+    height: 100%;
+    object-fit: cover;
+    width: 100%;
+  }
+}
+
+.card__link {
+  color: $jonri-codes-color-black;
+  text-decoration: none;
+
+  &::after {
+    bottom: 0;
+    content: '';
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+}
+

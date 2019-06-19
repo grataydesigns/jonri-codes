@@ -17,7 +17,7 @@
             {% set path = '/icons/jonri-codes.svg' %}
         {% endif %}
     {% endif %}
-    <svg class="jc-icon{{ ' ' + class if class }}"
+    <svg class="icon{{ ' ' + class if class }}"
             {% if title %}
                 aria-labelledby="title"
             {% else %}

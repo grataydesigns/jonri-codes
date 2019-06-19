@@ -1,0 +1,24 @@
+{% macro card(class=false, media=false, title, title_heading_level, text, links) %}
+<div class="card{{ " " + class if class }}">
+  {% if media %}
+    <div class="card__media">
+      {{ media | safe }}
+    </div>
+  {% endif %}
+  <div class="card__content">
+    {% if title %}
+      {{ card_title(title=title, title_heading_level=title_heading_level) }}
+    {% endif %}
+    {{ text | safe }}
+    {% if link %}
+      {{ link(text=links.text, class="card__link", href=links.href, icon_right=link.icon) }}
+    {% endif %}
+  </div>
+</div>
+{% endmacro %}
+
+{% macro card_title(class=false, title, title_heading_level) %}
+  <{{ title_heading_level }} class="card__title{{ " " + class if class}}">
+    <span class="card__title-text">{{ title }}</span>
+  </{{ title_heading_level }}>
+{% endmacro %}

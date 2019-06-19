@@ -1,0 +1,41 @@
+{% extends "templates/sink.nunjucks" %}
+{% block body %}
+    {% filter markdown(true, "sink-reset") %}
+        # Cards Sink
+    {% endfilter %}
+    <div class="gallery-grid">
+        {{ library.card(
+            media='<img src="/images/luci-logo.jpg" alt="FPO" />',
+            title='LUCI',
+            title_heading_level='h2',
+            text='<p class="card__text">LUCI (Library for User-Centered Interfaces) is the official Design System for NetApp products and sites. I am the technical lead for LUCI.</p>',
+            links={
+                text: 'LUCI',
+                href: 'http://luci.netapp.com'
+            }
+        ) }}
+
+        {{ library.card(
+            media='<img src="/images/netapp-cloud-product.jpg" alt="FPO" />',
+            title='Product Landing Page',
+            title_heading_level='h2',
+            text='<p class="card__text">Landing page for products</p>',
+            links={
+                text: 'Why Cloud Services',
+                href: 'http://luci.netapp.com'
+            }
+        ) }}
+
+        {{ library.card(
+            media='<img src="/images/netapp-campaign-lp.jpg" alt="FPO" />',
+            title='LUCI',
+            title_heading_level='h2',
+            text='<p class="card__text">LUCI (Library for User-Centered Interfaces) is the official Design System for NetApp products and sites. I am the technical lead for LUCI.</p>',
+            links={
+                text: 'LUCI',
+                href: 'http://luci.netapp.com'
+            }
+        ) }}
+        
+    </div>
+{% endblock body %}

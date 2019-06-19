@@ -4,19 +4,19 @@
   width: $size-token;
 }
 
-.jc-icon {
+.icon {
   @include jc-icon-size('md');
-  fill: $jonri-codes-icon-color-default;
+  // fill: $jonri-codes-icon-color-default;
 
-  &:hover {
-    fill: $jonri-codes-icon-color-hover;
-  }
+  // &:hover {
+  //   fill: $jonri-codes-icon-color-hover;
+  // }
 }
 
 $size-tokens: jonri-codes-token('icon', 'size');
 
 @each $size-key, $value in $size-tokens {
-  .jc-icon--size-#{$size-key} {
+  .icon--size-#{$size-key} {
     @include jc-icon-size($size-key);
   }
 }

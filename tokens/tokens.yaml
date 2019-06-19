@@ -1,25 +1,31 @@
-# color
-color:
-  white: &color-white "#FFFFFF"
-  black: &color-black "#000000"
-  neutral:
-    19: &color-neutral-19 "#303030"
-    36: &color-neutral-36 "#5C5C5C"
-    56: &color-neutral-56 "#8F8F8F"
-  red:
-    60: &color-red-60 "#DD5353"
-text-color:
-  primary:
-    on-light: *color-neutral-19
-    on-dark: *color-white
-  secondary:
-    on-light: *color-red-60
-icon-color:
-  default: *color-neutral-19
-  hover: *color-red-60
+# Your design system tokens go here, scss and json versions of this file will be automatically generated
 
-# space
+# COLOR
+color:
+  black: &color-black "#000000"
+  white: &color-white "#FFFFFF"
+  text:
+    primary: *color-black
+    
+# Font
+font:
+  family:
+    primary: '"Montserrat", sans-serif'
+  weight:
+    light: 300
+    normal: 400
+    bold: 700
+  size:
+    sm: 12px
+    md: 14px
+    lg: 16px
+  line-height:
+    body: 1.4
+    heading: 1.2
+
+# Space
 space:
+  xxs: &space-xxs 4px
   xs: &space-xs 8px
   sm: &space-sm 12px
   md: &space-md 16px
@@ -28,6 +34,7 @@ space:
   xxl: &space-xxl 48px
   xxxl: &space-xxxl 64px
   stack:
+    xxs: "0 0 !{*space-xxs}"
     xs: "0 0 !{*space-xs}"
     sm: "0 0 !{*space-sm}"
     md: "0 0 !{*space-md}"
@@ -35,36 +42,8 @@ space:
     xl: "0 0 !{*space-xl}"
     xxl: "0 0 !{*space-xxl}"
     xxxl: "0 0 !{*space-xxxl}"
-  inline-left:
-    xs: "0 !{*space-xs} 0 0"
-    sm: "0 !{*space-sm} 0 0"
-    md: "0 !{*space-md} 0 0"
-    lg: "0 !{*space-lg} 0 0"
-    xl: "0 !{*space-xl} 0 0"
-    xxl: "0 !{*space-xxl} 0 0"
-    xxxl: "0 !{*space-xxxl} 0 0"
 
-# font
-font:
-  family:
-    sans-serif: "'Roboto', Arial, 'Helvetica Neue', Helvetica, sans-serif"
-    monospace: "'Courier New', Courier, 'Lucida Sans Typewriter', 'Lucida Typewriter', monospace"
-  weight:
-    light: 300
-    normal: 400
-    medium: 500
-    bold: 700
-  size:
-    xs: 12px
-    sm: 14px
-    md: 16px
-    lg: 24px
-    h1:
-      sm: 42px
-      md: 46px
-      lg: 52px
-
-# Icons
+# Icon
 icon:
   size:
     xs: 16px
@@ -72,3 +51,36 @@ icon:
     md: 24px
     lg: 32px
     xl: 48px
+
+# Border
+border:
+  dark: "solid 1px !{*color-black}"
+  radius:
+    default: 3px
+
+# Box Shadow
+box:
+  shadow: "rgba(!{*color-black}, .05)"
+
+#Grid
+grid:
+  gap: 40px
+  columns: 12
+
+# Animation
+animation:
+  easein:
+    quad: cubic-bezier(.55, .085, .68, .53)
+    back: cubic-bezier(.57, .07, .6, 1.71)
+  easeout:
+    quad: cubic-bezier(.25, .46, .45, .94)
+    back: cubic-bezier(.175, .885, .32, 1.275)
+  delay: .5s
+  duration: .8s
+
+#Breakpoint
+breakpoint:
+  sm: 576px
+  md: 768px
+  lg: 992px
+  xl: 1200px

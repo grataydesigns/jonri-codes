@@ -1,0 +1,55 @@
+$gap-horizontal: $jonri-codes-grid-gap;
+$gap-vertical: $jonri-codes-grid-gap;
+$grid-columns: $jonri-codes-grid-columns;
+
+@mixin grid {
+  @supports (grid-area: auto) {
+    display: grid;
+    grid-column-gap: $gap-horizontal;
+    grid-row-gap: $gap-vertical;
+  }
+}
+
+@mixin grid-auto($min-width) {
+  @supports (grid-area: auto) {
+    grid-template-columns: repeat(auto-fit, minmax($min-width, 1fr));
+  }
+}
+
+@mixin grid-layout($cols...) {
+  @supports (grid-area: auto) {
+    grid-template-columns: repeat($jonri-codes-grid-columns, 1fr);
+
+    $i: 1;
+    @each $col in $cols {
+      > :nth-of-type(#{$i}) {
+        grid-column-end: span nth($col, 1);
+        @if length($col) > 1 {
+          grid-row-end: span nth($col, 2);
+        }
+      }
+      $i: $i + 1;
+    }
+  }
+}
+
+@mixin grid-layout-advanced($cols...) {
+  @supports (grid-area: auto) {
+    grid-template-columns: repeat($jonri-codes-grid-columns, 1fr);
+    $i: 1;
+    @each $col in $cols {
+      > :nth-of-type(#{$i}) {
+        grid-column-end: nth($col, 2);
+        grid-column-start: nth($col, 1);
+        grid-row-end: nth($col, 4);
+        grid-row-start: nth($col, 3);
+      }
+      $i: $i + 1;
+    }
+  }
+}
+
+@function round-width($i) {
+  $width: floor(100 * $i * 100 / $jonri-codes-grid-columns) / 100;
+  @return $width#{'%'};
+}
