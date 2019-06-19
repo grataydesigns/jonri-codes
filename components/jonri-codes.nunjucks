@@ -101,6 +101,8 @@
     </svg>
 {% endmacro %}
 
+{% macro social(class=false) %}
+{% endmacro %}
 {% macro link(class=false,
                 href="#",
                 text="Click Me",
@@ -137,7 +139,4 @@
             {{ icon(class="link__icon link__icon--right", name=icon_right, path=icon_path) }}
         {% endif %}
     </{{element}}>
-{% endmacro %}
-
-{% macro social(class=false) %}
 {% endmacro %}
