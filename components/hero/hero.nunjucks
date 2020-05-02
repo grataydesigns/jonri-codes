@@ -1,2 +1,0 @@
-{% macro hero(class=false) %}
-{% endmacro %}
