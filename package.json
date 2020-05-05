@@ -1,0 +1,35 @@
+{
+	"name": "jonri-codes",
+	"version": "1.0.0",
+	"description": "",
+	"main": "index.js",
+	"scripts": {
+		"develop": "gatsby develop -o"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/grataydesigns/jonri-codes.git"
+	},
+	"keywords": [],
+	"author": "",
+	"license": "ISC",
+	"bugs": {
+		"url": "https://github.com/grataydesigns/jonri-codes/issues"
+	},
+	"homepage": "https://github.com/grataydesigns/jonri-codes#readme",
+	"dependencies": {
+		"@mdx-js/mdx": "^1.6.1",
+		"@mdx-js/react": "^1.6.1",
+		"babel-plugin-styled-components": "^1.10.7",
+		"gatsby": "^2.21.9",
+		"gatsby-plugin-mdx": "^1.2.4",
+		"gatsby-plugin-styled-components": "^3.3.0",
+		"gatsby-plugin-typography": "^2.5.0",
+		"gatsby-source-filesystem": "^2.3.0",
+		"react": "^16.13.1",
+		"react-dom": "^16.13.1",
+		"react-typography": "^0.16.19",
+		"styled-components": "^5.1.0",
+		"typography": "^0.16.19"
+	}
+}
