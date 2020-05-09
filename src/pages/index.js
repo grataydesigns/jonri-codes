@@ -1,8 +1,12 @@
 import React from "react";
 import styled from "styled-components";
+import { graphql, Link } from "gatsby";
+import Img from "gatsby-image";
 import { rhythm } from "../utils/typography";
 import { useSiteMetadata } from "../hooks/useSiteMetadata";
 import { Container, Grid } from "../components/layout";
+
+import Card from "../components/card";
 
 const Billboard = styled.h1`
 	color: #393939;
@@ -43,12 +47,13 @@ const SubHeadline = styled.p`
 	line-height: 1.5;
 `;
 
-const GridItem = styled.div`
+const GridItem = styled.section`
 	grid-column: 1 / span 6;
+	margin-bottom: 70px;
 	margin-top: 160px;
 `;
 
-export default () => {
+export default ({ data }) => {
 	const { description } = useSiteMetadata();
 	return (
 		<Container>
@@ -62,6 +67,45 @@ export default () => {
 					<SubHeadline>{description}</SubHeadline>
 				</GridItem>
 			</Grid>
+			{data.allMdx.nodes.map(({ excerpt, frontmatter, fields }) => (
+				<Card>
+					<Link to={`/blog${fields.slug}`}>
+						<h3>{frontmatter.title}</h3>
+						<Img sizes={frontmatter.cover.childImageSharp.sizes} />
+						<p>{frontmatter.date}</p>
+						<p>{excerpt}</p>
+					</Link>
+				</Card>
+			))}
 		</Container>
 	);
 };
+
+export const query = graphql`
+	query SITE_INDEX_QUERY {
+		allMdx(
+			sort: { fields: [frontmatter___date], order: DESC }
+			filter: { frontmatter: { published: { eq: true } } }
+		) {
+			nodes {
+				id
+				excerpt(pruneLength: 250)
+				frontmatter {
+					title
+					date(formatString: "MMM DD, YYYY")
+					cover {
+						publicURL
+						childImageSharp {
+							sizes(maxWidth: 2000, traceSVG: { color: "#639" }) {
+								...GatsbyImageSharpSizes_tracedSVG
+							}
+						}
+					}
+				}
+				fields {
+					slug
+				}
+			}
+		}
+	}
+`;

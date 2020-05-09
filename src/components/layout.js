@@ -12,8 +12,18 @@ export const GridWrapper = styled.div`
 	grid-gap: 30px;
 `;
 
+export const GalleryGridWrapper = styled.div`
+	display: grid;
+	grid-gap: 30px;
+	grid-template-columns: repeat(auto-fit, minmax(255px, 1fr));
+`;
+
 export const Container = ({ children }) => (
 	<ContainerWrapper>{children}</ContainerWrapper>
 );
 
 export const Grid = ({ children }) => <GridWrapper>{children}</GridWrapper>;
+
+export const GalleryGrid = ({ children }) => (
+	<GalleryGridWrapper>{children}</GalleryGridWrapper>
+);
