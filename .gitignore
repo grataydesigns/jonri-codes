@@ -1,39 +1,11 @@
-# Logs
-logs
-npm-debug.log*
+# Project dependencies
+.cache
+node_modules
 
-# Bower dependency directory (https://bower.io/)
-bower_components
+# Build directory
+public
 
-# Dependency directories
-node_modules/
-jspm_packages/
-
-# Optional npm cache directory
-.npm
-
-# Optional eslint cache
-.eslintcache
-
-# dotenv environment variables file
-.env
-
-# default webroot build directory
-/_site
-
-# Auto-generated files
-/dist
-/data/icons.json
-
-tokens/*
-# Keep yaml token source file
-!tokens/*.yaml
-
-# Ignore root .njk files in /components
-components/jonri-codes.nunjucks
-# keep files in subdirectories in /components
-!components/*/*.nunjucks
-
-
-# MacOS folder attributes
-*.DS_Store
+#Other
+.DS_Store
+yarn-error.log
+.vscode
