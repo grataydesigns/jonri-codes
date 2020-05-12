@@ -1,10 +1,9 @@
 import React from "react";
 import styled from "styled-components";
-import { graphql, Link } from "gatsby";
-import Img from "gatsby-image";
+import { graphql } from "gatsby";
 import { rhythm } from "../utils/typography";
 import { useSiteMetadata } from "../hooks/useSiteMetadata";
-import { Container, Grid } from "../components/layout";
+import { Container, Grid, Layout } from "../components/layout";
 
 import Card from "../components/card";
 
@@ -50,34 +49,35 @@ const SubHeadline = styled.p`
 const GridItem = styled.section`
 	grid-column: 1 / span 6;
 	margin-bottom: 70px;
-	margin-top: 160px;
 `;
 
 export default ({ data }) => {
 	const { description } = useSiteMetadata();
 	return (
-		<Container>
-			<Grid>
-				<GridItem>
-					<Billboard>Hello,</Billboard>
-					<Headline>
-						I'm currently a <span className="underline">UI Developer</span> at
-						IBM
-					</Headline>
-					<SubHeadline>{description}</SubHeadline>
-				</GridItem>
-			</Grid>
-			{data.allMdx.nodes.map(({ excerpt, frontmatter, fields }) => (
-				<Card>
-					<Link to={`/blog${fields.slug}`}>
-						<h3>{frontmatter.title}</h3>
-						<Img sizes={frontmatter.cover.childImageSharp.sizes} />
-						<p>{frontmatter.date}</p>
-						<p>{excerpt}</p>
-					</Link>
-				</Card>
-			))}
-		</Container>
+		<Layout>
+			<Container>
+				<Grid>
+					<GridItem>
+						<Billboard>Hello,</Billboard>
+						<Headline>
+							I'm currently a <span className="underline">UI Developer</span> at
+							IBM
+						</Headline>
+						<SubHeadline>{description}</SubHeadline>
+					</GridItem>
+				</Grid>
+				{data.allMdx.nodes.map(({ excerpt, frontmatter, fields }) => (
+					<Card
+						url={`/blog${fields.slug}`}
+						title={frontmatter.title}
+						date={frontmatter.date}
+						excpert={excerpt}
+						image={frontmatter.cover.childImageSharp.sizes}
+						key={fields.slug}
+					/>
+				))}
+			</Container>
+		</Layout>
 	);
 };
 

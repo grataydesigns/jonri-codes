@@ -1,19 +1,38 @@
 import React from "react";
 import { graphql } from "gatsby";
 import Img from "gatsby-image";
+import styled from "styled-components";
 import { MDXRenderer } from "gatsby-plugin-mdx";
-import { Container } from "../components/layout";
+import { Container, Layout } from "../components/layout";
+
+const ArticleHeader = styled.header`
+	text-align: center;
+`;
+
+const ArticleBody = styled.div`
+	margin: 0 auto;
+	max-width: 46.875rem;
+`;
 
 export default ({ data }) => {
 	const { frontmatter, body } = data.mdx;
 
 	return (
-		<Container>
-			<h1>{frontmatter.title}</h1>
-			<p>{frontmatter.date}</p>
-			<Img sizes={frontmatter.cover.childImageSharp.sizes} />
-			<MDXRenderer>{body}</MDXRenderer>
-		</Container>
+		<Layout>
+			<article>
+				<ArticleHeader>
+					<Container>
+						<h1>{frontmatter.title}</h1>
+						<p>{frontmatter.date}</p>
+					</Container>
+				</ArticleHeader>
+				<Img sizes={frontmatter.cover.childImageSharp.sizes} />
+				<p>Photo by Aaron Burden on Unsplash</p>
+				<ArticleBody>
+					<MDXRenderer>{body}</MDXRenderer>
+				</ArticleBody>
+			</article>
+		</Layout>
 	);
 };
 
