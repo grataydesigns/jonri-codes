@@ -57,7 +57,7 @@ const GridItem = styled.section`
   }
 `;
 
-export default ({ data }) => {
+const Home = ({ data }) => {
   const { description } = useSiteMetadata();
   return (
     <Layout>
@@ -78,7 +78,7 @@ export default ({ data }) => {
             title={frontmatter.title}
             date={frontmatter.date}
             excpert={excerpt}
-            image={frontmatter.cover.childImageSharp.sizes}
+            image={frontmatter.cover}
             key={fields.slug}
           />
         ))}
@@ -86,6 +86,8 @@ export default ({ data }) => {
     </Layout>
   );
 };
+
+export default Home;
 
 export const query = graphql`
   query SITE_INDEX_QUERY {
@@ -102,9 +104,7 @@ export const query = graphql`
           cover {
             publicURL
             childImageSharp {
-              sizes(maxWidth: 2000, traceSVG: { color: "#639" }) {
-                ...GatsbyImageSharpSizes_tracedSVG
-              }
+              gatsbyImageData(placeholder: BLURRED, layout: CONSTRAINED)
             }
           }
         }
