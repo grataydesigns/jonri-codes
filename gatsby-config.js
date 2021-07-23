@@ -4,6 +4,7 @@ module.exports = {
     description: `This is the personal portfolio and blog of Jonri Rothwell where I write about my coding and design journey.`,
   },
   plugins: [
+    `gatsby-transformer-yaml`,
     `gatsby-plugin-styled-components`,
     `gatsby-plugin-image`,
     `gatsby-transformer-sharp`,
@@ -42,6 +43,12 @@ module.exports = {
       options: {
         path: `${__dirname}/images`,
         name: `images`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        path: `${__dirname}/data`,
       },
     },
     {

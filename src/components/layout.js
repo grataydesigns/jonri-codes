@@ -1,6 +1,9 @@
 import React from 'react';
+import Helmet from 'react-helmet';
 import styled from 'styled-components';
 
+import favicon16 from '../../images/favicon-16x16.png';
+import favicon32 from '../../images/favicon-32x32.png';
 import Header from '../components/header';
 import Footer from '../components/footer';
 
@@ -24,6 +27,10 @@ export const GalleryGridWrapper = styled.div`
 
 export const Layout = ({ children }) => (
   <>
+    <Helmet>
+      <link rel="icon" type="image/png" sizes="32x32" href={favicon32} />
+      <link rel="icon" type="image/png" sizes="16x16" href={favicon16} />
+    </Helmet>
     <Header />
     <main>{children}</main>
     <Footer />

@@ -1,9 +1,9 @@
 import React from 'react';
 import { Link } from 'gatsby';
+import { StaticImage } from 'gatsby-plugin-image';
 import styled from 'styled-components';
 
 import { rhythm } from '../utils/typography';
-import Logo from '../../images/logo.svg';
 
 const HeaderWrapper = styled.header`
   margin-bottom: 8.125rem;
@@ -40,7 +40,7 @@ const Header = () => (
     <HeaderContainer>
       <SiteTitle>
         <Link to="/">
-          <img src={Logo} alt="Jonri Codes Logo" />
+          <StaticImage src="../../images/logo.svg" alt="Jonri Codes Logo" />
           <span>jonri.codes</span>
         </Link>
       </SiteTitle>
