@@ -1,0 +1,21 @@
+- heading: Introduction
+  sections:
+    - title: Getting Started
+      id: getting-started
+    - title: Account
+      id: profile
+      pages:
+        - title: Manage Accounts
+          id: account-management
+          path: /account-management
+
+- heading:
+  sections:
+    - title: Account
+      id: account
+    - title: Catalog
+      id: catalog
+      pages:
+        - title: Create Catalog
+          id: create-catalog
+          path: /create-catalog
