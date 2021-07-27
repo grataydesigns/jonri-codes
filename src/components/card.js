@@ -8,7 +8,6 @@ const CardContainer = styled.div`
   border-radius: 2px;
   display: flex;
   flex-direction: column;
-  max-width: 350px;
   position: relative;
 
   :hover {
