@@ -12,7 +12,12 @@ import { StaticImage } from 'gatsby-plugin-image';
 import { breakpoint } from '../utils/breakpoint';
 import { rhythm } from '../utils/typography';
 import { useSiteMetadata } from '../hooks/useSiteMetadata';
-import { Container, Grid, Layout } from '../components/layout';
+import {
+  Container,
+  Grid,
+  GalleryGridWrapper,
+  Layout,
+} from '../components/layout';
 
 import Card from '../components/card';
 
@@ -194,16 +199,18 @@ const Home = ({ data }) => {
             </StatCard>
           </GridItem>
         </Grid>
-        {data.allMdx.nodes.map(({ excerpt, frontmatter, fields }) => (
-          <Card
-            url={`/blog${fields.slug}`}
-            title={frontmatter.title}
-            date={frontmatter.date}
-            excpert={excerpt}
-            image={frontmatter.cover}
-            key={fields.slug}
-          />
-        ))}
+        <GalleryGridWrapper>
+          {data.allMdx.nodes.map(({ excerpt, frontmatter, fields }) => (
+            <Card
+              url={`/blog${fields.slug}`}
+              title={frontmatter.title}
+              date={frontmatter.date}
+              excpert={excerpt}
+              image={frontmatter.cover}
+              key={fields.slug}
+            />
+          ))}
+        </GalleryGridWrapper>
       </Container>
     </Layout>
   );

@@ -1,0 +1,64 @@
+---
+title: Improvements to jonri.codes
+date: 2021-07-26
+published: true
+cover: ./website-sketch.jpg
+photographer: Photo by Marco Nenzi on Unsplash
+---
+
+Now that I have started working on my blog and portfolio again there are quite a
+few improvements I want to make. I started with updating my package dependencies
+to the latest version. I was mainly motivated to do so because Gatsby improved
+the way you can import images to your site and how those images render in the
+browser. This led me to adjust the size of the feature image used in my blog
+template. In the previous version of my site the feature image was very tall and
+I didn’t bother with optimization or resizing. Now it’s not as tall and I’m able
+to take advantage of the responsive image technique that Gatsby provides with
+its image plugin.
+
+Next I turned my attention to the homepage and wanted to add a feature section
+to the hero. My focus was to highlight the things I like to work on, like design
+and coding. In the near future I plan to expand my homepage with a featured
+portfolio piece and more links to blog articles. I know if I want to make that
+transition to UI designer/frontend engineer it will be important for me to
+showcase my work on design systems and other UI related work. I can’t wait to
+complete that enhancement. I know it will differentiate me from other job
+candidates. I also, included React Helmet so I can include a favicon for my site
+and later on improve the SEO by adding title and description tags.
+
+One thing that is important to me when building an app or site on the frontend
+is the developer experience. How easy is it to maintain a consistent design
+while developing components and pages? The next goal for my site is to improve
+the developer experience by using design tokens for color, typography, spacing,
+and fonts. Currently, I’m designing in the browser, meaning I’m making it up as
+a go along, which isn’t necessarily a bad thing for quickly prototyping styles
+and components, but as I continue to build out my site I know this will not
+scale. Some of the inefficiencies I have are remembering the hex code for my
+primary color and grayscale colors, staying on track for using a 4 point scale
+for spacing, and mixing pixels and rems. By defining these values as design
+tokens, I can basically set it and forget and use the tokens throughout my
+components in an efficient and consistent manner. I’ve started investigating the
+best way to do this in Gatsby and the approach I decided to take is Theme UI in
+combination with styled-components.
+
+Theme UI describes itself as “a library for creating themeable user interfaces
+based on constraint-based design principles. Build custom component libraries,
+design systems, web applications, Gatsby themes, and more with a flexible API
+for best-in-class developer ergonomics.”
+
+Definitely sounds like it meets the requirements for improving the developer
+experience of my site.
+
+The motivation behind styled-components is “styled-components is the result of
+wondering how we could enhance CSS for styling React component systems. By
+focusing on a single use case we managed to optimize the experience for
+developers as well as the output for end users.”
+
+Again, definitely meets my requirements for improving the developer experience.
+
+As I continue to make updates to my site, I will use Theme UI to integrate
+design tokens and styled-components to create reusable components that are
+themed with the design tokens. My site is a playground for my coding and design
+journey, and it will not always be perfect, but my goal is to have a place where
+I can showcase the things I’m learning and the side projects I’m using to keep
+my skills up-to-date.
