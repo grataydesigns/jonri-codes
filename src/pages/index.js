@@ -11,7 +11,6 @@ import {
 } from 'react-icons/fa';
 import { StaticImage } from 'gatsby-plugin-image';
 import { breakpoint } from '../utils/breakpoint';
-import { rhythm } from '../utils/typography';
 import { useSiteMetadata } from '../hooks/useSiteMetadata';
 import { Layout } from '../components/layout';
 import { Container, Grid, GalleryGridWrapper } from '../components/grid';
@@ -23,7 +22,7 @@ const Billboard = styled.h1`
   font-size: 5.0625rem;
   font-weight: 500;
   line-height: 1.2;
-  margin-bottom: ${rhythm(1)};
+  margin-bottom: var(--space-1-and-half-x);
 `;
 
 const Headline = styled.h2`
@@ -31,7 +30,7 @@ const Headline = styled.h2`
   font-size: 3.75rem;
   font-weight: 400;
   line-height: 1.2;
-  margin-bottom: ${rhythm(2)};
+  margin-bottom: var(--space-1-and-half-x);
 
   .underline {
     color: #6c63ff;
@@ -83,6 +82,11 @@ const StatCardHeader = styled.div`
 
 const StatCardBody = styled.div`
   padding: 1.5rem;
+
+  h3 {
+    margin: var(--space-stack-1-and-half-x);
+  }
+
   h5 {
     font-weight: 500;
   }

@@ -20,28 +20,25 @@
 	},
 	"homepage": "https://github.com/grataydesigns/jonri-codes#readme",
 	"dependencies": {
+		"@fontsource/rubik": "^4.5.0",
 		"@mdx-js/mdx": "^1.6.22",
 		"@mdx-js/react": "^1.6.22",
 		"babel-plugin-styled-components": "^1.13.2",
 		"chroma-js": "^2.1.2",
-		"color-converter": "^1.4.1",
 		"gatsby": "^3.9.1",
 		"gatsby-image": "^3.9.0",
 		"gatsby-plugin-image": "^1.9.0",
 		"gatsby-plugin-mdx": "^2.9.0",
 		"gatsby-plugin-sharp": "^3.9.0",
 		"gatsby-plugin-styled-components": "^4.9.0",
-		"gatsby-plugin-typography": "^3.9.0",
 		"gatsby-remark-images": "^5.6.0",
 		"gatsby-source-filesystem": "^3.9.0",
 		"gatsby-transformer-sharp": "^3.9.0",
-		"gatsby-transformer-yaml": "^3.10.0",
 		"react": "^17.0.2",
 		"react-dom": "^17.0.2",
 		"react-helmet": "^6.1.0",
 		"react-icons": "^4.2.0",
 		"react-typography": "^0.16.20",
-		"styled-components": "^5.3.0",
-		"typography": "^0.16.21"
+		"styled-components": "^5.3.0"
 	}
 }

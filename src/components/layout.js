@@ -2,6 +2,8 @@ import React from 'react';
 import chroma from 'chroma-js';
 import Helmet from 'react-helmet';
 import { createGlobalStyle } from 'styled-components';
+import '@fontsource/rubik';
+import '@fontsource/rubik/500.css';
 
 import favicon16 from '../../images/favicon-16x16.png';
 import favicon32 from '../../images/favicon-32x32.png';
@@ -65,7 +67,8 @@ const GlobalStyles = createGlobalStyle`
         --color-action-pressed-on-light: var(--color-primary-main);
         --color-action-disabled-on-light: var(--color-neutral-60);
         --color-action-disabled-on-dark: var(--color-neutral-40);
-        --font-family-monospace: '"Roboto Mono", monospace';
+        --font-family-sans-serif: "Rubik", Arial, 'Helvetica Neue', Helvetica, sans-serif;
+        --font-family-monospace: "Roboto Mono", monospace;
         --font-size-heading-level-1: 3rem;
         --font-size-heading-level-2: 2.375rem;
         --font-size-heading-level-3: 1.875rem;
@@ -77,7 +80,7 @@ const GlobalStyles = createGlobalStyle`
         --font-size-text-sm: 0.75rem;
         --font-weight-normal: 400;
         --font-weight-medium: 500;
-        --font-line-height-normal: 1.3;
+        --font-line-height-normal: 1.5;
         --font-line-height-headings: 1.2;
         --font-line-height-tight: 1.2;
         --border-radius-control: 0.25rem;
@@ -120,17 +123,61 @@ const GlobalStyles = createGlobalStyle`
         --size-icon-md: 1.25rem;
         --size-icon-lg: 1.5rem;
         @media ${breakpoint.tablet} {
-            --font-size-heading-level-1: '3.75rem';
-            --font-size-heading-level-2: '3rem';
-            --font-size-heading-level-3: '2.375rem';
-            --font-size-heading-level-4: '2rem';
+            --font-size-heading-level-1: 3.75rem;
+            --font-size-heading-level-2: 3rem;
+            --font-size-heading-level-3: 2.375rem;
+            --font-size-heading-level-4: 2rem;
         }
         @media ${breakpoint.laptop} {
-            --font-size-heading-level-1: '4.75rem';
-            --font-size-heading-level-2: '3.75rem';
-            --font-size-heading-level-3: '3rem';
-            --font-size-heading-level-4: '2.5rem';
+            --font-size-heading-level-1: 4.75rem;
+            --font-size-heading-level-2: 3.75rem;
+            --font-size-heading-level-3: 3rem;
+            --font-size-heading-level-4: 2.5rem;
         }
+    }
+
+    /* Enable smooth scroll */
+    html:focus-within {
+        scroll-behavior: smooth;
+    }
+
+    /* Remove default margin */
+    body,
+    h1,
+    h2,
+    h3,
+    h4,
+    p,
+    li,
+    figure,
+    figcaption,
+    blockquote,
+    dl,
+    dd {
+        margin: 0;
+    }
+
+    body {
+        &,
+        &:before,
+        &:after {
+            box-sizing: border-box;
+        }
+
+        *,
+        *:before,
+        *:after {
+            box-sizing: border-box;
+        }
+
+        background-color: var(--color-background-light-primary);
+        color: var(--color-text-primary-on-light);
+        font-family: var(--font-family-sans-serif);
+        line-height: var(--font-line-height-normal);
+        margin: 0;
+        min-height: 100vh;
+        padding: 0;
+        text-rendering: optimizeSpeed;
     }
 `;
 

@@ -3,8 +3,6 @@ import { Link } from 'gatsby';
 import { StaticImage } from 'gatsby-plugin-image';
 import styled from 'styled-components';
 
-import { rhythm } from '../utils/typography';
-
 const HeaderWrapper = styled.header`
   margin-bottom: 8.125rem;
   padding: 0 1rem;
@@ -31,7 +29,7 @@ const SiteTitle = styled.h1`
 
   img {
     margin-bottom: 0;
-    margin-right: ${rhythm(1)};
+    margin-right: var(--space-1-and-half-x);
   }
 `;
 
