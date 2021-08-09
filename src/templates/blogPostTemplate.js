@@ -3,7 +3,8 @@ import { graphql } from 'gatsby';
 import { GatsbyImage, getImage } from 'gatsby-plugin-image';
 import styled from 'styled-components';
 import { MDXRenderer } from 'gatsby-plugin-mdx';
-import { Container, Layout } from '../components/layout';
+import { Container } from '../components/grid';
+import { Layout } from '../components/layout';
 
 const ArticleHeader = styled.header`
   text-align: center;

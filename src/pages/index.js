@@ -1,4 +1,5 @@
 import React from 'react';
+import rgba from 'styled-components';
 import styled from 'styled-components';
 import { graphql } from 'gatsby';
 import {
@@ -12,12 +13,8 @@ import { StaticImage } from 'gatsby-plugin-image';
 import { breakpoint } from '../utils/breakpoint';
 import { rhythm } from '../utils/typography';
 import { useSiteMetadata } from '../hooks/useSiteMetadata';
-import {
-  Container,
-  Grid,
-  GalleryGridWrapper,
-  Layout,
-} from '../components/layout';
+import { Layout } from '../components/layout';
+import { Container, Grid, GalleryGridWrapper } from '../components/grid';
 
 import Card from '../components/card';
 
@@ -43,7 +40,7 @@ const Headline = styled.h2`
     position: relative;
 
     &::after {
-      background-color: rgba(108, 99, 255, 0.5);
+      background-color: var(--color-primary-focused);
       border-radius: 3px;
       bottom: -18px;
       content: '';
@@ -64,7 +61,7 @@ const SubHeadline = styled.p`
 const StatCard = styled.div`
   border: 1px solid rgba(0, 0, 0, 0.1);
   border-radius: 0.125rem;
-  box-shadow: 0 0 0.25rem 0 rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0 0.25rem 0 ${rgba('#000000', 0.1)};
 `;
 
 const StatCardHeader = styled.div`
