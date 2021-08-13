@@ -35,7 +35,7 @@ const Headline = styled.h2`
   .underline {
     color: #6c63ff;
     display: inline-block;
-    margin-bottom: 24px;
+    margin-bottom: var(--space-1-and-half-x);
     position: relative;
 
     &::after {
