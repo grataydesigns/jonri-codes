@@ -69,13 +69,13 @@ const GlobalStyles = createGlobalStyle`
     --color-action-disabled-on-dark: var(--color-neutral-40);
     --font-family-sans-serif: "Rubik", Arial, 'Helvetica Neue', Helvetica, sans-serif;
     --font-family-monospace: "Roboto Mono", monospace;
-    --font-size-heading-level-1: 3rem;
-    --font-size-heading-level-2: 2.375rem;
+    --font-size-heading-level-1: 2.25rem;
+    --font-size-heading-level-2: 1.75rem;
     --font-size-heading-level-3: 1.875rem;
     --font-size-heading-level-4: 1.625rem;
     --font-size-heading-level-5: 2rem;
     --font-size-heading-level-6: 1.5rem;
-    --font-size-text-lg: 1.25rem;
+    --font-size-text-lg: 1.125rem;
     --font-size-text-md: 1rem;
     --font-size-text-sm: 0.75rem;
     --font-weight-normal: 400;
@@ -123,16 +123,18 @@ const GlobalStyles = createGlobalStyle`
     --size-icon-md: 1.25rem;
     --size-icon-lg: 1.5rem;
     @media ${breakpoint.tablet} {
-        --font-size-heading-level-1: 3.75rem;
-        --font-size-heading-level-2: 3rem;
+        --font-size-heading-level-1: 3rem;
+        --font-size-heading-level-2: 2.375rem;
         --font-size-heading-level-3: 2.375rem;
         --font-size-heading-level-4: 2rem;
+        --font-size-text-lg: 1.3125rem;
     }
     @media ${breakpoint.laptop} {
-        --font-size-heading-level-1: 4.75rem;
-        --font-size-heading-level-2: 3.75rem;
+        --font-size-heading-level-1: 4rem;
+        --font-size-heading-level-2: 2.8125rem;
         --font-size-heading-level-3: 3rem;
         --font-size-heading-level-4: 2.5rem;
+        --font-size-text-lg: 1.375rem;
     }
   }
 

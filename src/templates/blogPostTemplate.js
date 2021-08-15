@@ -4,10 +4,12 @@ import { GatsbyImage, getImage } from 'gatsby-plugin-image';
 import styled from 'styled-components';
 import { MDXRenderer } from 'gatsby-plugin-mdx';
 import { Container } from '../components/grid';
+import { BodyText } from '../components/Typography/BodyText';
+import { H1 } from '../components/Typography/Heading';
 import { Layout } from '../components/layout';
 
 const ArticleHeader = styled.header`
-  text-align: center;
+  margin: var(--space-stack-2-x);
 `;
 
 const ArticleBody = styled.div`
@@ -24,12 +26,14 @@ const BlogPostTemplate = ({ data }) => {
       <article>
         <ArticleHeader>
           <Container>
-            <h1>{frontmatter.title}</h1>
-            <p>{frontmatter.date}</p>
+            <H1 gutterBottom={6}>{frontmatter.title}</H1>
+            <BodyText type="md">{frontmatter.date}</BodyText>
           </Container>
         </ArticleHeader>
         <GatsbyImage image={image} />
-        <p>{frontmatter.photographer}</p>
+        <BodyText type="sm" gutterBottom={3}>
+          {frontmatter.photographer}
+        </BodyText>
         <ArticleBody>
           <MDXRenderer>{body}</MDXRenderer>
         </ArticleBody>

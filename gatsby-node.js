@@ -79,3 +79,15 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
     });
   }
 };
+
+// exports.onCreateWebpackConfig = ({ actions }) => {
+//   actions.setWebpackConfig({
+//     resolve: {
+//       fallback: {
+//         path: require.resolve('path-browserify'),
+//         assert: require.resolve('assert/'),
+//         fs: require.resolve('fs'),
+//       },
+//     },
+//   });
+// };
